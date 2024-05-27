@@ -19,21 +19,22 @@ class Solution
     public:
     void insert(int arr[], int i)
     {
-        //code here
     }
      public:
     //Function to sort the array using insertion sort algorithm.
     void insertionSort(int arr[], int n)
     {
         //code here
-        for(int i=0;i<n;i++){
-            for(int j=i;j>0;j--){
-                if(arr[j-1]>arr[j]){
-                    int t = arr[j-1];
-                    arr[j-1] = arr[j];
-                    arr[j] = t;
-                }
+        if(n==0) return;
+        insertionSort(arr,n-1);
+        //insert(arr,i+1);
+        for(int i=n-1;i>0;i--){
+            if(arr[i-1]>arr[i]){
+                int t = arr[i-1];
+                arr[i-1] = arr[i];
+                arr[i] = t;
             }
+            else return;
         }
     }
 };
